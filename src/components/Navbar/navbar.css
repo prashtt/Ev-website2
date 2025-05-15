@@ -1,0 +1,98 @@
+
+
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  padding: 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.nav-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+/* Desktop Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-size: 18px;
+  gap: 90px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-contact {
+  border-radius: 50px;
+  padding: 10px 20px;
+  background: #fff;
+  color: #262626;
+  cursor: pointer;
+}
+
+/* Toggle Button - hidden on desktop */
+.nav-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav {
+    padding: 15px 30px;
+  }
+
+  /* Show toggle button */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Hide menu by default */
+  .nav-menu {
+    position: fixed;
+    top: 60px; /* Height of navbar */
+    right: 0;
+    background-color: #111;
+    flex-direction: column;
+    width: 200px;
+    height: calc(100vh - 60px);
+    padding: 20px;
+    gap: 30px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.5);
+  }
+
+  /* Show menu when open */
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .nav-menu li {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .nav-contact {
+    background: #fff;
+    color: #262626;
+    padding: 10px 20px;
+    border-radius: 50px;
+    width: fit-content;
+  }
+}
